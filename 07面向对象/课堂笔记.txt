@@ -1,0 +1,97 @@
+上节课的内容：
+1、面向对象程序设计和面向过程设计
+
+2、面向对象的三大特性
+	封装
+	    通俗讲：把属性和方法封装到一个类里
+	继承
+		类之间的继承
+		代码的重复利用
+
+		Man is a Person
+		Man.marry(Women women){} use a 
+		Person has a  Man/Women
+	多态
+	    主要体现在：
+	    方法的重写  子类重写父类的方法  
+			Person eat()
+			Man extends Person{eat(){kk}}
+	    重载
+	              Man{ 
+		      eat(){}
+		      eat(String s){}
+		      }
+	    父类指向子类   Person p=new Man();
+
+	    泛型  Person<T>{}
+3、对类进行赋值
+	构造器   Person(String name){name=name}
+	get和set方法进行赋值
+4、标准的JavaBean
+	Person{
+		String name;
+		public String getName(){
+			return name;
+		}
+		public void setName(String name){
+			name=name;
+		}
+	}
+
+
+	User{
+		String loginName;
+
+	}
+
+	Controller{
+		saveUser(String loginName){
+		User u=new User(loginName);
+		UserService user=new UserService();
+		user.save(u,u2,u43,u4....);//数组
+
+		}
+	}
+======================================
+1、构造器
+	a)也叫构造方法
+	   默认jdk会为类生成一个空的构造器
+	   非空构造器，可以传递多个参数
+	 b)构造器的执行顺序
+		先执行父类的构造器
+		再执行自己的构造器
+	c)初始化属性
+	  new User("12","33");
+	d)与get/set的区别  
+		构造器是在创建对象时对属性进行初始化，不能再对属性进行更改。
+		set()方法可以在创建对象后，可以多次执行，多次对属性值进行更改
+
+2、this关键字
+	Person{
+	 String name;
+
+	 public void setName(String name){
+		this.name=name;
+	 }
+
+	}
+	this();//调用改类的空构造器
+	this.eat();
+      this:代表调用该方法的对象
+
+3、super关键字
+	代表调用该方法的父类对象
+	
+4、做一个案例
+		员工（姓名  工号  work）
+	研发部         运维部
+  javaEE工程师        网络运维
+  IOS工程师		硬件运维
+  Android工程师
+
+
+5、final
+6、static
+7、匿名类
+8、内部类
+9、初始化块
