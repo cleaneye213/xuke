@@ -1,0 +1,54 @@
+上节课：
+1、抽象类
+	public abstract class Person{}
+
+	public abstract class Man extends Person{}
+2、final
+
+3、static
+	不能修饰类
+	修饰成员变量、方法、代码块--》类本身
+3、匿名对象
+	传递对象
+	一次性使用
+4、内部类
+
+5、代码块{}
+
+================
+1、接口
+	1、概念
+		方法功能的集合
+		interface  
+		public interface MethodService{};
+		jdk1.8下的接口
+		只有常量和抽象方法
+	2、实现类
+		public class M  implements MethodService{}
+	3、多实现关系
+		1、接口可以实现多继承即子类可以实现多个接口
+	4、接口继承其他接口
+		public interface MethodInterfaceThree extends MethodInterfaceTwo{
+
+			String say();
+		}
+	5、抽象类和接口的区别
+		1、抽象类有成员变量，接口只有常量
+		2、抽象类里的方法是子类公有的，属于类的公有的特性
+			接口里的方法可以是子类特殊加载或者赋予它的特性不是所有
+			的子类都有的。
+
+2、总结下多态
+      父类指向子类的引用
+      1、Person p=new Man();
+      2、
+	abstact class Person{};
+	Person p=new Man();
+      3、InterfaceService a=new InterfaceServiceImpl();
+      4、多态中的成员变量
+	   Person p=new Man();
+	   System.out.println(p.age);
+	   //输出父类中的age
+
+	5\   //输出子类里的方法
+		p.eat();
