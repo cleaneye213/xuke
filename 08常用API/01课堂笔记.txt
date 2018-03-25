@@ -1,0 +1,166 @@
+上节课的内容
+一、接口
+   1、定义
+       public interface NameInterface{}
+   2、implements 
+       可以同时实现多个接口
+       implements NameInterface,NameInterface2{}
+   3、接口里的成员
+	没有成员变量，成员常量(final)
+	没有构造器--->不能实例化对象
+	没有普通方法
+	有抽象方法(可以不写public abstract)-->
+	 public interface NameInterface{
+		String eat();//抽象方法
+	 }
+    4、类和接口之间的关系
+	类可以实现接口（多个）
+	接口可以继承其他接口
+	类可以继承其他类同时实现一个或者多个接口
+    5、与抽象类的区别
+	相同点：都不能实例化对象  不能new Interface();
+		都可以有常量
+		抽象类接口可以没有抽象方法;
+
+	区别：
+		抽象类有成员变量，接口没有；
+		抽象类有普通方法，接口没有；
+		抽象类可以继承其他类，接口只能继承接口;
+二、多态
+    父类 p=new 子类（）;
+	向上转型   子类转成父类
+		   父类 p=new 子类（）;
+		   不能使用子类中特有的方法
+		   Person p=new Man();
+		   p.eat();//只能调用父类里的方法
+		   p.name;-->调用的是子类的name;
+	向下转型
+		Person p=new Person();
+		p.marry(new Man());
+		p.marry(new Woman());
+		子类  son=(子类)父类的对象p;
+
+
+	类型转换失败
+	    Man man=new Man();
+	    Object obj=new String("ddd");
+	    if(obj instanceof Person){
+		Person p=(Person)obj
+	    }
+========================
+一、API  
+	Application Programming  Interface
+	应用程序的接口
+	java api
+	看源代码--》
+	C:\Program Files\Java\jdk1.8.0_151\src.zip
+	API文档
+	    1.6API
+
+	常用的包名
+	java.io/java.nio  输入输出流
+	java.lang 核心包
+	java.text  格式化
+	java.util //工具类
+	
+
+二、Object
+	1、boolean equals(Object obj);
+	  Person p=new Person();
+	  Man m=new Man();
+	  Object obj=(Object)m;
+	  boolean flag=p.equals(m);
+
+	  判断一个人是否是同龄人，根据年龄来判断
+	  age==age...
+	  equals();
+	  Person{
+		int age;
+
+		boolean equals(Object p){
+		    //1、先判断p是否为空
+		    if(p==null){
+			 return false;
+		    }
+		    //2、判断p是不是当前对象
+		    if(this==p){
+			return true;
+		    }
+		    //3、判断p是否是person类
+		    if(!(p instanceOf Person)){
+			return false;
+		    }
+		    //4、判断是否是同龄人
+		    if(this.age==p.age){
+			return true
+		    }else{
+			return false;
+		    }
+		}
+	  }
+	  2、toString();---》输出这个类的描述
+	     //默认的toString是调用Object的equals
+	     //类名@内存地址（hashCode）
+	     自定义类的时候，如果输出类名@内存地址没有意义
+	     希望输出有意义的字符串
+	     重写toString()方法
+
+三、String
+	1、String 类代表字符串
+	   String str="abc";
+	   Char char={'a','b','c'};
+	2、equals
+		String str="123";
+		String str1=new String("123");
+		system.out.print(str==str1);//输出false
+        3、构造方法
+		1、new  String();
+		2、new String(char[] char);
+			
+		3、new String(byte[] byte);
+	        4、String(StringBuffer buffer) 
+		5、String(StringBuilder builder) 
+	4、常用方法
+		1、长度 length();
+			String str="ddddd"；
+			int len=str.length();
+			//用户名的长度是否符合要求
+
+		2、判断字符串以什么字符开始或者结束
+			startsWith(String str);
+			endsWith(String str);
+		3、是否包含某个字符串
+			boolean contains(char c);
+		4、截取字符串********
+		    substring(int begin);
+		5、字符串转数组
+			String str = "abcde";
+			char[] chs = str.toCharArray();
+			byte[] bytes = str.getBytes();
+		6、
+
+四、StringBuffer
+   1、字符串缓冲区，线程安全
+   2、append  拼接字符串
+	StringBuffer sc=new StringBuffer();
+	sc.append("用户名");
+	sc.append("密码");
+	System.out.print(sc);//用户名密码
+
+	String sc2="用户名"+"密码"+"电话号码"+"备注";//用户名密码
+    3、insert
+         插入字符串
+    4、delete
+    5、indexOf
+    6、replace
+    7、reverse
+
+    8 String与StringBuffer的转换
+	StringBuffer sc=new StringBuffer(new String("sdfsdf"));
+	sc.toString();-->转成String
+五、StringBuilder
+	1、字符串缓冲区，线程不安全的
+	2、常用API与StringBuffer基本上一致
+	3、String，StringBuffer，StringBuilder
+		效率最高的是StringBuilder--》线程不安全
+	
