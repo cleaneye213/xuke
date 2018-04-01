@@ -1,0 +1,26 @@
+1、		// 创建集合对象
+		Collection coll = new ArrayList();
+
+		// 创建Person对象
+		Person p1 = new Person("jack", 25);
+		Person p2 = new Person("rose", 22);
+		Person p3 = new Person("lucy", 20);
+		Person p4 = new Person("jack", 25);
+
+		// 集合中添加一些Perosn
+
+		// 删除指定Person
+
+		// 删除所有Person
+
+		// 判断容器中是否还有Person
+
+		// 判断容器中是否包含指定Person
+
+		// 获取容器中Person的个数
+
+		// 将容器变为数组,遍历除所有Person
+2、
+练习：去除ArrayList集合中重复元素
+	1：存入字符串元素
+	2：存入自定义对象元素（如Perosn对象）（姓名和年龄相同的为重复元素）
