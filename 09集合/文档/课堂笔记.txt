@@ -1,0 +1,124 @@
+一、基本数据类型和包装类
+	包装类定义了一些方法，方便我们操作
+	Integer.parse();
+	Integer.valueOf();
+	Float.valueOf();
+	Double.valueOf();
+	自动装箱：jdk在编译时把基本数据转成包装类/子类转成父类
+	自动拆箱：jdk在编译时把包装类转成基本数
+		  父类转成子类
+	Integer i=4;
+	int s=i;
+二、System
+	1、获取系统时间-->long-->毫秒数-->DateFormate
+	-->SimpleDateFormate-->formate-->日期字符串
+			--->parse--->日期对象
+			new Date(long);
+	2、getProperty();
+		获取系统配置的相关信息
+	3、gc();
+三、Math
+	数学计算工具类
+	绝对值，平方根，立方根
+	sin,cos,log,指数
+
+	Math.round();
+	Math.random();//生成随机数
+四、Arrays
+	数组的工具类
+	二分查找
+	sort();排序
+	sort(arry[],new Comportor(){});自定义排序
+	copyOf();
+五、大数值类型的计算
+	BigInteger：如果数值的值超过int，最好用它来存储
+		加 add(num);num可以是正数，也可以是负数
+		减
+		乘 mulity()  *
+		除 divide();//没保留小数点
+	BigDecimal：如果数值的值超过long,最好用它来存储
+		加 add
+		乘 mulity()  *
+		除 divide();定义返回小数的个数，及舍入方式
+		divide(123,2,BigDecimal.ROUND_HALF_UP)
+==========================================
+集合
+一、概念
+	容器
+	主要存放不同的对象，不受容量限制(存放个数不确定)
+	与数组的比较：
+	数组需要事先定义长度，超过长度添加时，效率低下，
+		扩充不方便
+	int[] a=new int[10];
+	数组的优点：查询方便
+	Array-->Arrays(工具类)
+二、集合的分类
+	存储的方式的不同，导致集合类型的不一样
+	抽象所有的集合--》把它们的共性提取出
+	-->接口
+	Collection:存放单值
+	----List：存放的对象是有序的(存放的先后顺序)，
+		可以存放重复的对象
+		*ArrayList：基于数组的实现方式
+			   查询顺序非常快（基于数组索引）
+			   添加元素的时候很慢
+		Vector：实现方式基本与ArrayList
+			线程安全的-->速度慢-->
+			查询及添加删除比ArrayList慢
+		LinkedList：链式集合
+			存放对象的内存不是连续的
+			添加删除对象比较快，但查询速度比较慢
+	----Set：无序，不能存放重复对象
+		*TreeSet:二分树
+		HashSet：
+		----LinkedHashSet
+		
+	Map:存放的是键值对
+	-----*HashMap
+	----->*TreeMap
+
+	1：将对象添加到集合
+	2：从集合中删除对象
+	3: 从集合中查找一个对象
+	4：从集合中修改一个对象就是增删改查
+
+三、Collection接口
+	添加对象
+	删除对象
+	判断对象是否存在
+	清空集合
+	获取
+
+	Collection-继承->Iterable接口-->Iterator迭代器
+四、List接口
+	1、List
+	增加：向列表的尾部添加指定的元素
+		add(int index, E element) 
+	删除	remove(int index)
+	修改 set(int index, E element);
+	查找  get(int index) /indexOf(Object o) 
+	判断
+	2、LinkedList
+		数据结构为队列方式
+		特有的方法
+		addFirst(E e) 
+		addLast(E e)	 
+		getFirst() 
+		getLast() 
+		removeFirst() 
+		removeLast() 
+		如果集合中没有元素，获取或者删除元
+		素抛：NoSuchElementException
+
+		offer(E e) 
+          将指定元素添加到此列表的末尾（最后一个元素）。
+	  poll() 
+          获取并移除此列表的头（第一个元素）
+	  peek() 
+          获取但不移除此列表的头（第一个元素）。
+
+
+
+
+	
+
