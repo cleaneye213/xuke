@@ -1,0 +1,82 @@
+上节课内容
+一、正则表达式
+	字符串
+	String.split("");   --》数组
+	String str="sdfsdf";
+	str=str.replaceAll("正则表达","新字符");--》新的字符串
+	matches();//是否匹配  -->true/false
+二、date
+	new Date();
+	getTime();
+	toString();
+三、DateFormate
+	2018-03-30 HH:mm:ss  24小时进制
+	           hh:mm:ss  12小时进制
+	SimpleDateFormate().parse()
+		           .formate();
+四、Calendar 日历
+	Calendar c=Calendar.getInstance();
+	c.get(int fied);//Calendar.Year
+
+	c.set(int field,value);//会向上进位
+	c.add(int field,int num);//
+==================
+一、基本数据类型及包装类
+1、
+	int float double long short char boolean byte
+
+	char a='1';
+	int i=a+2;
+	对基本数据类进行包装，提供一些方法方便我们进行操作
+	包装类
+	Integer Float Double Long Short Character Boolean Byte
+2、包装类的常用方法
+	String str="123";
+	str+5;-->"1235"-->128
+	
+	基本数据类型转字符串
+	String.valeOf(int i);
+	String str=""+5;
+	基本数据类型转包装类
+	Integer i=Integer.valueOf(1);
+	int i=Integer.valueOf("2");
+3、
+	自动装箱：基本数值转成对象
+		Integer i=123；
+	自动拆箱：对象转成基本数值
+		Integer a=new Integer(3);
+		int b=a+10;
+二、System
+	常用方法
+	arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
+          从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束。
+	currentTimeMillis();当前的时间long值
+	gc();
+	getProperty();获取系统的一些信息
+	in:输入流
+	out：输出流
+	err
+三、Math
+	数值类型的数学计算
+	加、减、乘、除
+	abs,sin,cos,平方根，立方根
+	比较两个数的大小 max(a,b) ,min(a,b)
+	生成0-1之间的随机数 random();
+	round();四舍五入
+	
+四、Arrays
+	Arrays.sort();默认自然排序，从小到大排序
+	作业：Arrays.sort实现从大到小排序
+	copyOf
+五、大数值计算
+	BigInteger
+		加：add(num);
+		减: add(-num);
+		乘: multiply(num);
+		除: divide(num);
+	BigDecimal
+		加：add(num);
+		减: add(-num);
+		乘: multiply(num);
+		除: divide(num);
+	long -->比long大的数字

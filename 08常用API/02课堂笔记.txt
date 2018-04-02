@@ -1,82 +1,96 @@
-ä¸ŠèŠ‚è¯¾å†…å®¹
-ä¸€ã€æ­£åˆ™è¡¨è¾¾å¼
-	å­—ç¬¦ä¸²
-	String.split("");   --ã€‹æ•°ç»„
-	String str="sdfsdf";
-	str=str.replaceAll("æ­£åˆ™è¡¨è¾¾","æ–°å­—ç¬¦");--ã€‹æ–°çš„å­—ç¬¦ä¸²
-	matches();//æ˜¯å¦åŒ¹é…  -->true/false
-äºŒã€date
-	new Date();
-	getTime();
+ÉÏ½Ú¿Î£º
+Ò»¡¢Object
+	equals();
+	toString();ÀàÃû@¹þÏ£µØÖ·
+¶þ¡¢String
+	length();
+	indexOf();
+	½ØÈ¡×Ö·û´®
+	substring(3,length);
+	trim();
+	×ª»»³Échar¡¢×Ö½ÚÊý×é
+	split(ÕýÔò±í´ïÊ½);
+	replace(oldStr,newStr);
+	replaceAll(ÕýÔò±í´ïÊ½,"ÐÂµÄ×Ö·û´®");
+	matchers(ÕýÔò±í´ïÊ½);
+Èý¡¢StringBuffer
+	StringBuffer ´øÓÐ»º´æÇøµÄ×Ö·û´®API
+	String str="add";
+	str="111"+"ddd";
+
+	StringBuffer buff=new StringBuffer("aaa");
+	buff.append(" and name like '"+name+"'");
 	toString();
-ä¸‰ã€DateFormate
-	2018-03-30 HH:mm:ss  24å°æ—¶è¿›åˆ¶
-	           hh:mm:ss  12å°æ—¶è¿›åˆ¶
-	SimpleDateFormate().parse()
-		           .formate();
-å››ã€Calendar æ—¥åŽ†
-	Calendar c=Calendar.getInstance();
-	c.get(int fied);//Calendar.Year
+	insert();
+	delete();
+ËÄ¡¢StringBuilder
+	StringBufferÊÇÏß³Ì°²È«µÄ£¬ËÙ¶È±È½ÏÂý
+	StringBuilderÏß³Ì²»°²È«µÄ£¬ËÙ¶È±È½Ï¿ì
+===================
+Ò»ÕýÔò±í´ïÊ½
+	1¡¢Æ¥Åä¹æÔòµÄ×Ö·û´®
+	replaceAll(String regex, String replacement) 
+	matches(String regex) 
+	2¡¢Óï·¨
+		String str="abcahhhha";
+		str.reaplceAll("a","A");
+		×Ö·ûÀàÐÍ
 
-	c.set(int field,value);//ä¼šå‘ä¸Šè¿›ä½
-	c.add(int field,int num);//
-==================
-ä¸€ã€åŸºæœ¬æ•°æ®ç±»åž‹åŠåŒ…è£…ç±»
-1ã€
-	int float double long short char boolean byte
+		×Ö·û£º X
+		´ú±í×Ö·ûX
+		×Ö·û£º\
+		´ú±í×ªÒå×Ö·û£º\\
+		Ö¸±ê·û£º\t
+		´ú±í£º°´tabºóµÄÁô¿Õ
+		\n:
+		´ú±í£ºnextline  »»ÐÐ·û
+		\r
+		»Ø³µ·û
+		\d
+		´ú±íÊý×Ö
+		\w
 
-	char a='1';
-	int i=a+2;
-	å¯¹åŸºæœ¬æ•°æ®ç±»è¿›è¡ŒåŒ…è£…ï¼Œæä¾›ä¸€äº›æ–¹æ³•æ–¹ä¾¿æˆ‘ä»¬è¿›è¡Œæ“ä½œ
-	åŒ…è£…ç±»
-	Integer Float Double Long Short Character Boolean Byte
-2ã€åŒ…è£…ç±»çš„å¸¸ç”¨æ–¹æ³•
-	String str="123";
-	str+5;-->"1235"-->128
-	
-	åŸºæœ¬æ•°æ®ç±»åž‹è½¬å­—ç¬¦ä¸²
-	String.valeOf(int i);
-	String str=""+5;
-	åŸºæœ¬æ•°æ®ç±»åž‹è½¬åŒ…è£…ç±»
-	Integer i=Integer.valueOf(1);
-	int i=Integer.valueOf("2");
-3ã€
-ï¬	è‡ªåŠ¨è£…ç®±ï¼šåŸºæœ¬æ•°å€¼è½¬æˆå¯¹è±¡
-		Integer i=123ï¼›
-ï¬	è‡ªåŠ¨æ‹†ç®±ï¼šå¯¹è±¡è½¬æˆåŸºæœ¬æ•°å€¼
-		Integer a=new Integer(3);
-		int b=a+10;
-äºŒã€System
-	å¸¸ç”¨æ–¹æ³•
-	arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
-          ä»ŽæŒ‡å®šæºæ•°ç»„ä¸­å¤åˆ¶ä¸€ä¸ªæ•°ç»„ï¼Œå¤åˆ¶ä»ŽæŒ‡å®šçš„ä½ç½®å¼€å§‹ï¼Œåˆ°ç›®æ ‡æ•°ç»„çš„æŒ‡å®šä½ç½®ç»“æŸã€‚
-	currentTimeMillis();å½“å‰çš„æ—¶é—´longå€¼
-	gc();
-	getProperty();èŽ·å–ç³»ç»Ÿçš„ä¸€äº›ä¿¡æ¯
-	in:è¾“å…¥æµ
-	outï¼šè¾“å‡ºæµ
-	err
-ä¸‰ã€Math
-	æ•°å€¼ç±»åž‹çš„æ•°å­¦è®¡ç®—
-	åŠ ã€å‡ã€ä¹˜ã€é™¤
-	abs,sin,cos,å¹³æ–¹æ ¹ï¼Œç«‹æ–¹æ ¹
-	æ¯”è¾ƒä¸¤ä¸ªæ•°çš„å¤§å° max(a,b) ,min(a,b)
-	ç”Ÿæˆ0-1ä¹‹é—´çš„éšæœºæ•° random();
-	round();å››èˆäº”å…¥
-	
-å››ã€Arrays
-	Arrays.sort();é»˜è®¤è‡ªç„¶æŽ’åºï¼Œä»Žå°åˆ°å¤§æŽ’åº
-	ä½œä¸šï¼šArrays.sortå®žçŽ°ä»Žå¤§åˆ°å°æŽ’åº
-	copyOf
-äº”ã€å¤§æ•°å€¼è®¡ç®—
-	BigInteger
-		åŠ ï¼šadd(num);
-		å‡: add(-num);
-		ä¹˜: multiply(num);
-		é™¤: divide(num);
-	BigDecimal
-		åŠ ï¼šadd(num);
-		å‡: add(-num);
-		ä¹˜: multiply(num);
-		é™¤: divide(num);
-	long -->æ¯”longå¤§çš„æ•°å­—
+		×Ö·û[abc]
+		´ú±íÒ»¸ö×Ö·û£¬´ú±ía,b,cÖÐÈÎÒâµÄÒ»¸ö×Ö·û
+		×Ö·û[a-z]
+		´ú±í£ºÐ¡Ð´×Ö·ûa,zÖ®¼äµÄÈÎÒâÒ»¸ö×Ö·û
+		»¹¿ÉÒÔ¶à¸öÇø¼ä
+		[(a-z)(A-Z)_(0-9)]
+		´ú±í£ºÐ¡Ð´×ÖÄ¸a-z,»òÕß´óÐ´A-Z»¹ÓÐ0-9»òÕß_
+		×Ö·û£º.
+		´ú±íÈÎÒâµÄ×Ö·û
+
+		±ß½ç×Ö·û
+		^:¿ªÍ·
+		Àý£º^[abc]
+		$:½áÎ²
+		Àý£º^[abc]$[0-9]
+		±ß½çÆ¥ÅäÆ÷£º\b
+		º¬Òå£º´ú±íµÄÊÇµ¥´Ê±ß½ç
+
+
+		´ÎÊý£º
+		X+£º
+		ÊýÁ¿´Ê£ºX?
+		º¬Òå£º´ú±íµÄÊÇX³öÏÖÒ»´Î»òÒ»´ÎÒ²Ã»ÓÐ
+		
+		ÇëÐ´³öÂú×ãÈçÏÂÆ¥Åä¹æÔòµÄ×Ö·û´®:
+		¹æÔò£º"[0-9]{6,12}"
+		¸Ã¹æÔòÐèÒªÆ¥ÅäµÄÄÚÈÝÊÇ£º³¤¶ÈÎª6Î»µ½12Î»µÄÊý×Ö¡£
+
+		
+		"1[34578][0-9]{9}"
+		13222222222
+
+		¡±[a-zA-Z_0-9]+@[a-zA-Z_0-9]+(\\.[a-zA-Z_0-9]+)+¡±
+¶þ¡¢Date
+	1¡¢¹¹Ôì·½·¨
+		new Date();»ñÈ¡µ±Ç°Ê±¼ä
+		new Date(long);Ê±¼äµÄºÁÃëÊý
+	2¡¢³£ÓÃ·½·¨
+		toString();
+		getTime();
+Èý¡¢DateFormate
+	new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+ËÄ¡¢Calendar
+	ÈÕÀú£º
