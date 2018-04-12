@@ -1,0 +1,83 @@
+上节课
+==========
+一、集合的概念
+	1、
+	是一个容器，可以存放不同类型的对象(可以自定义)
+	是javaAPI:String Boolean
+	集合的长度不是固定，是可变。
+	2、与数组的区别
+		数组长度是固定的，只能存放固定类型的对象
+二、集合的分类
+1、
+	按照存储数据类型的不同
+	Collection:存放单个对象
+		Collection c=new ArrayList();
+		增：c.add("ddd")
+		删：c.remove("");
+		改：c.add("ddd");清空clear();
+		判断：isEmpty();contains();
+		List: 可以存放重复的对象；按顺序存放
+			ArrayList: 最常用
+				存放数据，在内存中是连续的
+				底层是通过数组的方式实现
+				查询速度快，增删慢；
+			ArrayList list=new ArrayList();
+				增：add(index,对象)；
+				s删除：remove(index,对象);
+				修改：set(index,对象);
+			LinkedList:双向链表
+				存储的对象，包含上一个元素的地址，
+				下一个元素的地址
+
+				查询速度慢，增删快；
+				特有方法：
+				addFirst();
+				addLast();
+				removeFirst();
+				removerLast();
+				getFirst();
+				getLast();
+				队列的特性
+				offer();将指定元素添加到此列表的末尾（最后
+				poll();获取并移除此列表的头（第一个元素）
+				栈的特性
+				pop();获取并移除此列表的头（第一个元素）
+				pull();将指定元素添加到此列表的头部
+			Vector:
+				底层也是基于数组的方式
+				多线程安全的，所以速度
+				比ArrayList慢。
+		Set:存放重复的对象；不按顺序存放
+			HashSet:
+			TreeSet:
+			LinkedHashSet:
+	Map：存放键值对
+		HashMap
+		TreeMap
+		LinkedHashMap
+2、迭代器
+	1、Iterable
+	是所有集合都有实现的接口
+	集合为了方便遍历获取对象，专门定义一个对象来
+	遍历集合。专业的事情由专业的人来处理。
+	是集合里的内部接口： Iterator iterator()
+
+	是集合内容的迭代器
+	
+3、Set集合
+	1、
+	不能存放重复对象
+	Set是怎么判断重复的？
+	先通过hashCode()比较，如果返回值一样，则
+	再比较equals()，如果equals返回的true的话，就说对象重复了
+	2、实现类
+		HashSet: 存放的数据不是连续的
+			根据存放的对象的数据+算法计算出对象的
+			哈希值，可以理解为内存的地址
+			HashSet判断重复是通过hashCode()比较和equals()比较
+
+		TreeSet:
+			二叉数的数据存储结构，对象存进去后
+			会自动进行排序，默认自然排序
+	数据结构：存储对象的方式叫做数据结构：可以是
+	栈、队列、数组、二叉数。
