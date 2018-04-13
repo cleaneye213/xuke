@@ -1,0 +1,46 @@
+Iterable
+	iterator();
+	Collection
+		List:可以存放重复数据，按存入顺序读出
+			get(index,对象);
+			set(index,对象);
+			remove(index,对象);
+			ArrayList:
+			LinkedList:
+			Vector:
+		iterator();-->迭代器
+		listIterator();
+		Set: 不可以存放重复数据，按存入顺序读出
+			HashSet:哈希表
+				hashCode();
+				equals();
+			Set set=new HashSet();
+			set.add(new Person("aa",20));
+			set.add(new Person("aa",20));
+			set.add(new Person("aa",20));
+			TreeSet:红黑数二叉数
+				默认自然排序
+			Comparator---->compare(T t1,T t2);
+			Comparable---->compareTo(T o);
+				比较此对象与指定对象的顺序。
+				如果该对象小于、
+				等于或大于指定对象，则分别返回负整数
+				、零或正整数。 
+二、泛型
+1、
+集合可以存放不同类型的对象
+但我们在遍历时，iterator的next();
+返回的是一个Object。这时进行类型强转时就有可能报错
+能不能向数组一样，规定这个集合只能存放某一种类型的对象
+这样就可以用泛型来定义
+格式:
+集合类型<对象类型> 集合对象=new 集合类型<对象类型>();
+2、泛型类
+public class ResponseMes<T>{
+
+}
+3、泛型方法
+格式：
+public <泛型的声明> 返回值(也可以是泛型) 方法名称(泛型 泛型的变量){
+
+}
