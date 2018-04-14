@@ -148,6 +148,7 @@ class PorkSort implements Comparator<String>{
 	//梅花、方片、黑桃、红桃(♠♥♦♣)
 	//方片♦=1,梅花♣=2,红桃♥=3,黑桃♠=4,(大小王的花色)=5
 	//2=15,A=14,K=13,Q=12
+	//为了错开两个牌面之间的最小值和最大值，都乘以本身。
 	public int parseStringToNum(String s) {
 		if("大王".equals(s)) {
 			return 17*17+5;
