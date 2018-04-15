@@ -1,0 +1,223 @@
+Set集合
+	不可以存放重复对象
+	hashCode(),equals();
+	HashSet: 
+	TreeSet:默认排序 ；
+		必须要有重写Comparable或者Comparator
+		Comparable: compareTo();属于对象本身的方法
+		Comparator: comapre(T t1,T t2);return 0 对象相等
+			    对象外部的方法
+		Set set=new TreeSet();
+		set.add(new Person());-->Person 实现Comparable
+		如果Person没有实现Comparable
+		Set set1=new TreeSet(new Comparator(){compare(){}});
+		set.add(new Person());
+
+2、泛型
+集合是可以存放不同的对象类型
+遍历的时候
+	Object obj=iterator.next();
+	需要类型强转--》String--》Person
+用泛型规定集合只能存放某种类型的对象
+List<String> list=new ArrayList<>();
+int index=0;
+for(String temp:list){
+	list.get(index);
+	index++;
+	
+}
+泛型的方法：
+public <泛型的声明> 方法的返回值 方法名称(泛型 变量){
+
+}
+public <T> T getData(T t){
+	
+	return t;
+}
+public <T> void getData(T t){
+	
+}
+public <T,B> T getData(T t,B b){
+	
+	return t;
+}
+泛型的类：
+public class Person<T>{
+	private T t;
+	
+	public Person(T t){
+
+	}
+	
+	public <T> T getData(T t){
+
+		return t;
+	}
+	
+}
+
+new Person<Tiger>();
+
+泛型的通配符  ？
+List<?> list=new ArrayList<>();
+//<=Person
+List<? extends Person> list=new ArrayList<>();
+//>=Person
+List<? super Person> list=new ArrayList<>();
+
+public class Person<T extends Tiger>{
+
+}
+================
+Map集合：
+Map是接口
+都继承了Iterable??-->没有继承-->没有iterator迭代器
+Map存放的是键值对的数据 key,value
+	学生：学号，姓名
+可以存放空值？
+Map集合存放数据，可不可以存放重复数据（key和value一样）？
+不可以的。
+Key必须是不一样。
+如果Key一样的话，会覆盖原本已经存放的数据。put(key,value);
+Map<String,String> map=new HashMap<>();
+map.put("1","333");
+map.put("1","444");
+map里的值只有"1","444",333被覆盖没了。
+
+分类：
+HashMap:key-->HashSet
+LinkedHashMap:
+TreeMap:key-->带有排序TreeSet
+Hashtable:?
+1、Map的方法
+Map<key,value>
+新增：put();
+查询：get(key)
+删除：remove(key)
+遍历：
+	1、先对KEY进行遍历
+		get(key)获取到值；
+		实现：
+		keySet() ；获取key的集合->Set
+		通过遍历Set集合，来获取Key值。
+		获取到Key值后就可以直接通过
+		map.get(key);获取到当前的值
+	2、能获取到key,value
+		然后能分别或者key和value
+		实现：
+		entrySet()--》Set<Map.Entry<K,V>>
+	3、直接获取所有的Values
+		values():-->Collection
+		可以通过Collection的迭代器进行遍历
+		也可以for-each进行遍历
+
+三、可变参数
+方法的：参数是事先定好类型和个数
+public void method1(String name,int age){
+
+}
+public void method1(int age,String name,String name2){
+
+}
+如果name是多个的话。
+public void method2(int age,String[] name){}
+public void method3(int age,List<String> nameList){};
+......
+如果我只想用String。。。
+在JDK1.5之后，如果我们定义一个方法需要接受多个参数，
+并且多个参数类型一致，我们可以对其简化成如下格式
+可变参数：
+public void method4(int age,String...name){
+
+}
+public void method4(int age,String... name){
+
+}
+
+四、Collections工具类
+ shuffle();List
+ max();list或者set的集合
+ min();list或者set的集合
+ reverse(); List
+ reverseOrder();List
+ shuffle(List<?> list) 
+          使用默认随机源对指定列表进行置换。
+shuffle(List<?> list, Random rnd) 
+          使用指定的随机源对指定列表进行置换
+sort(List<T> list);List
+
+发牌List<String>
+把牌顺序打乱后存入Map
+Map<Integer,String> map
+map.put(1,大王);
+map.put(2,小王);
+map.put(3,♦2);
+map.put(4,♦A);
+....
+List<Integer> w1
+List<Integer> w2
+List<Integer> w3
+for(int i=1;i<=51;i++){
+	if(i%3==1){
+		w1.add(i);
+	}else if(i%3==2){
+		w2.add(i);
+	}else if(i%3==0){
+		w3.add(i);
+	}
+}
+
+大王	1  玩家1  1/3
+小王	2  玩家2  2/3	
+♦2	3  玩家3
+♦A	4  玩家1	
+♦K	5  玩家2
+♦Q	6  玩家3
+♦J
+♦10
+♦9
+♦8
+♦7
+♦6
+♦5
+♦4
+♦3
+♣2
+♣A
+♣K
+♣Q
+♣J
+♣10
+♣9
+♣8
+♣7
+♣6
+♣5
+♣4
+♣3
+♠2
+♠A
+♠K
+♠Q
+♠J
+♠10
+♠9
+♠8
+♠7
+♠6
+♠5
+♠4
+♠3
+♥2
+♥A
+♥K
+♥Q
+♥J
+♥10
+♥9
+♥8
+♥7
+♥6
+♥5
+♥4
+♥3
