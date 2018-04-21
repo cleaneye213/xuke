@@ -1,0 +1,71 @@
+一、异常
+	NullException
+	空指针
+	数组越界
+	数字计算异常
+	类型转换异常
+概念：java程序在编译或者运行时出现的异常
+把异常信息封装成一个类，这个Exception
+是上数异常的父类或者祖先类
+Exception是Throwable的子类
+Throwable已知子类： 
+Error, Exception 
+
+Throwable
+	Exception:异常，编译和运行时的异常
+		RuntimeExcetpion:运行时的异常
+			空指针
+	Error:错误
+		是指系统级别的异常。比如内存溢出
+		系统宕机
+	区别：异常需要我们捕获它，提醒我们去处理，
+		如果不处理，停止运行。
+		必须由开发人员处理，修改代码
+	 Error是指系统级别的异常，发生JVM里，开发人员通常都是
+	 无法处理的。
+二、异常怎么被捕获的
+	一层层往外部传递异常信息
+三、怎么捕获异常
+	1、throw 抛出异常
+		注意：抛出运行时的异常，无需在方法上
+			throws异常。
+	2、throws 异常
+		throws 多个异常，以逗号隔开
+	3、try...catch 捕获异常，处理异常
+		可以多个catch
+		try{
+
+		}catch(){
+
+		}
+			
+		try{
+
+		}catch(){
+
+		}finally{
+
+		}
+
+		try{
+
+		}catch(){
+
+		}catch(){
+
+		}catch(){
+
+		}finally{
+
+		}
+
+		try{
+
+		}finally{
+
+		}
+四、错误类
+	Error 后续代码不会继续执行
+五、自定义异常类
+	需要自定义异常
+	继承RuntimeException
