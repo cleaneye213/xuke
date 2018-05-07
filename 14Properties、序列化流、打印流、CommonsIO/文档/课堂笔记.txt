@@ -1,0 +1,57 @@
+上节课：
+一、Properties
+	HashTable的子类
+	遍历方法3种
+	写文件--》key=value-->file
+		store(OutputStream);
+		FileOutputStream/BufferedOutputStream/BufferedWriter
+	读取文件-》读取key=value-->放到map里(HashTable)Properties
+		load(InputStream);
+		getProperties(name);
+		setProperties(key,value);
+二、序列化流和反序列化流
+	ObjectOutputStream/ObjectInputStream
+	Object的类必须实现了序列化接口
+		如果该类含有其他对象,这个Role也必须要实现序列化接口
+			User{
+				List<Role> listRole;
+			
+			}
+	不想让某个属性被序列化，需要关键字：transient
+三、打印流
+	PrintStream(OutputStream out) 
+          创建新的打印流。 
+	PrintStream(OutputStream out, boolean autoFlush) 
+          创建新的打印流。 
+
+	PrintStream-->字节输出流
+PrintStream pst=new PrintStream(filePathName);
+pst.write("ddd");
+pst.print();
+pst.println();
+pst.fulsh();
+pst.close();
+==================
+一、打印流
+	打印字符流
+	PrintWriter(Reader reader);
+	PrintWriter pwt=new PrintWriter(File/Reader);
+	pwt.write();
+	pwt.println();
+二、IO工具类
+	Apache--》commons-io.jar
+	对文件/文件夹操作
+	1、引入commons-io
+		右击：Build path-->Add to path
+	2、FilenameUtils
+		getExtension(String path)：获取文件的扩展名；
+		getName()：获取文件名；
+		isExtension(String fileName,String ext)：判断fileName是否是ext后缀名；
+	3、FileUtils
+		与文件操作相关的方法(复制、删除、获取文件、挪到、读写文件)
+三、练习
+从某个文件的某个文件进行插入字符串
+
+
+
+	
