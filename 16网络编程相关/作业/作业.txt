@@ -1,0 +1,13 @@
+模拟下载软件，下载文件。通过RandomAccessFile、线程知识、HttpConnection、输入输出流实现下载功能。
+
+1、下载的工具类   方法（String url,String targtFileName）
+	--》RandomAccessFile在本地生成跟服务器资源同样大小的文件(保存文件的路径由调用者传入)
+			通过URLConnection创建连接，获取资源信息，比如文件大小
+	--》启动线程进行获取资源
+	                通过RandomAccessFile写入到本地文件
+	--->创建线程
+		在工具类中，创建内部类线程，run方法体执行获取资源流
+2、测试类
+	传入要下载的url链接，及保存的路径地址
+
+二、在前面的基础上，添加多线程下载
